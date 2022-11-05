@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+
+    <section class="container">
+        <%- include('partials/navbar.ejs') %>
+    
+        <article class="content">
+          <h1>Posts</h1>
+
+          <div class="posts">
+
+            <% posts.forEach((item) => { %>
+
+              <div class="post">
+
+                <h3><%= item.titulo %></h3>
+                <p><%= item.texto %></p>
+
+                <% if(item.stars) { %>
+                  
+                  <% for( let index = 0; index < item.stars; index++ ) { %>
+                    <img src="https://affaso.com/wp-content/uploads/2020/06/5-point-stars-png-star-icon-flat-11562958768wpf63hu4tq.png">
+                  <% } %>
+
+                <% } %>
+
+              </div>
+              
+            <% }) %>
+           
+        </div> 
+        
+        </article>
+      </section>
+
+    <%- include('partials/footer.ejs') %>
+    <%- include('partials/foot.ejs') %>
+</body>
+</html>
